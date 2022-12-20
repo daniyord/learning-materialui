@@ -19,10 +19,10 @@ const ElevationScroll = (props) => {
 
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
-    height: "7.5em",
+    height: "7.5rem",
   },
   logo: {
-    height: "7em",
+    height: "7rem",
   },
 }));
 
@@ -34,7 +34,7 @@ const Header = () => {
       <ElevationScroll>
         <AppBar position="fixed">
           <Toolbar disableGutters>
-            <img alt="company logo" src={logo} className={classes.logoImage} />
+            <img alt="company logo" src={logo} className={classes.logo} />
           </Toolbar>
         </AppBar>
       </ElevationScroll>
