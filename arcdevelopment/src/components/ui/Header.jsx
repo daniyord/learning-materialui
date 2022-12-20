@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
   useScrollTrigger,
   Tab,
   Tabs,
+  Button,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -38,10 +39,21 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 10,
     marginLeft: "25px",
   },
+  button: {
+    ...theme.typography.estimate,
+    borderRadius: "50px",
+    marginLeft: "50px",
+    marginRight: "25px",
+  },
 }));
 
 const Header = () => {
   const classes = useStyles();
+  const [value, setValue] = useState(0);
+
+  const handleChange = (e, value) => {
+    setValue(value);
+  };
 
   return (
     <>
@@ -50,13 +62,26 @@ const Header = () => {
           <Toolbar disableGutters>
             <img alt="company logo" src={logo} className={classes.logo} />
 
-            <Tabs className={classes.tabContainer}>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              className={classes.tabContainer}
+              indicatorColor="primary"
+            >
               <Tab className={classes.tab} label="Home" />
               <Tab className={classes.tab} label="Services" />
               <Tab className={classes.tab} label="The Revolution" />
               <Tab className={classes.tab} label="About Us" />
               <Tab className={classes.tab} label="Contact Us" />
             </Tabs>
+
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+            >
+              Free Estimate
+            </Button>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
