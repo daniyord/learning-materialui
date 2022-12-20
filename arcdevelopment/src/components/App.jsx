@@ -4,6 +4,8 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./ui/Theme";
 import Header from "./ui/Header";
 
+console.log(theme);
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>

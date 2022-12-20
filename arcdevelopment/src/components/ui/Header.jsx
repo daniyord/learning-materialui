@@ -1,5 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, useScrollTrigger } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 
 const ElevationScroll = (props) => {
   const { children } = props;
@@ -18,7 +19,9 @@ const Header = () => {
   return (
     <ElevationScroll>
       <AppBar position="fixed">
-        <Toolbar>Arc Development</Toolbar>
+        <Typography variant="h3">
+          <Toolbar>Arc Development</Toolbar>
+        </Typography>
       </AppBar>
     </ElevationScroll>
   );
